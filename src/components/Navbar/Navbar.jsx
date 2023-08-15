@@ -12,17 +12,18 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto">
+    <div className="h-20 flex justify-between items-center">
       <Link href="/">
-        <h2>logoHere</h2>
+        <h2 className="text-2xl font-bold">logoHere</h2>
       </Link>
-      <div>
+      <div className="flex items-center gap-4">
         {navLinks.map((item) => (
           <Link key={item.id} href={item.url}>
             {item.title}
           </Link>
         ))}
       </div>
+      <button className="py-2 px-4 border-none bg-[#53c28b] text-white cursor-pointer rounded">Logout</button>
     </div>
   );
 };

@@ -14,9 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar></Navbar>
-        <div className="container mx-auto">{children}</div>
-        <Footer></Footer>
+        <div className="container mx-auto flex flex-col justify-between">
+          <Navbar></Navbar>
+          <div>{children}</div>
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   );
