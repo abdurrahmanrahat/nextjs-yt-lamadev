@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BannerImg from "/public/hero.png";
+import Button from "@/components/Button/Button";
 
 const BannerSection = () => {
   return (
@@ -12,7 +13,8 @@ const BannerSection = () => {
           Turning your Idea into Reality. We bring together the teams from the
           global tech industry.
         </p>
-        <button className="p-5 cursor-pointer bg-[#53c28b] border-none rounded w-max text-white text-lg">See Our Works</button>
+        <Button url="/portfolio" text="See Our Works" />
+        {/* <button className="p-4 cursor-pointer bg-[#53c28b] border-none rounded w-max text-white text-lg">See Our Works</button> */}
       </div>
       <div className="flex-1">
         <Image

@@ -1,11 +1,12 @@
+import AboutPageCom from '@/components/AboutPage/AboutPage';
 import React from 'react';
 
-const ContactPage = () => {
+const AboutPage = () => {
     return (
         <div>
-            ContactPage
+            <AboutPageCom></AboutPageCom>
         </div>
     );
 };
 
-export default ContactPage;
+export default AboutPage;
