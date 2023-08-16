@@ -18,7 +18,7 @@ const BannerSection = () => {
       </div>
       <div className="flex-1">
         <Image
-          className="w-[100%] h-[500px] object-cover"
+          className="w-[100%] h-[500px] object-contain img-home-animation"
           src={BannerImg}
           alt="Hero Image"
         />

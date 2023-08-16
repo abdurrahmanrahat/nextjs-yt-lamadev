@@ -17,7 +17,7 @@ const ContactPageCom = () => {
             src="/contact.png"
             alt="Contact Img"
             fill={true}
-            className=""
+            className="object-contain img-animation"
           />
         </div>
 
