@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className="h-20 flex justify-between items-center">
       <Link href="/">
-        <h2 className="text-2xl font-bold">logoHere</h2>
+        <h2 className="text-3xl font-bold">logoHere</h2>
       </Link>
       <div className="flex items-center gap-4">
         {navLinks.map((item) => (
