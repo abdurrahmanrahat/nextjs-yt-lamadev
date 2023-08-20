@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 const PortfolioCategory = ({ params }) => {
-  console.log(params);
+//   console.log(params);
   return (
     <div>
       <h1 className="my-5 text-2xl font-semibold text-[#53c28b]">

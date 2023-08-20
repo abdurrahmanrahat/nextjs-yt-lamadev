@@ -1,9 +1,10 @@
+import BlogPageCom from '@/components/BlogPage/BlogPageCom';
 import React from 'react';
 
 const BlogPage = () => {
     return (
         <div>
-            BlogPage
+            <BlogPageCom></BlogPageCom>
         </div>
     );
 };
