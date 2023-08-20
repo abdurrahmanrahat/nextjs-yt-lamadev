@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import DarkMoodToggle from "../DarkMoodToggle/DarkMoodToggle";
 
 const navLinks = [
   { id: "01", title: "Home", url: "/" },
@@ -16,7 +17,11 @@ const Navbar = () => {
       <Link href="/">
         <h2 className="text-3xl font-bold">logoHere</h2>
       </Link>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 md:ml-48">
+        {/* dark toggle theme */}
+        <DarkMoodToggle></DarkMoodToggle>
+
+        {/* navlinks */}
         {navLinks.map((item) => (
           <Link key={item.id} href={item.url}>
             {item.title}
