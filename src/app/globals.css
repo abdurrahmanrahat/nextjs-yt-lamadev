@@ -30,17 +30,22 @@ body {
   }
 }
 
-
 /* Home page image animation */
 .img-home-animation {
-    animation: move 3s infinite ease alternate;
+  animation: move 3s infinite ease alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-10px);
   }
-  
-  @keyframes move {
-    from {
-      transform: translateY(-10px);
-    }
-    to {
-      transform: translateY(10px);
-    }
+  to {
+    transform: translateY(10px);
   }
+}
+
+/* post category */
+
+.custom-row-reverse-class:nth-child(2n + 1) {
+  flex-direction: row-reverse;
+}

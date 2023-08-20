@@ -8,9 +8,9 @@ const PortfolioPageCom = () => {
         {/*  */}
         <Link
           href="/portfolio/illustrations"
-          className="border-2 border-[#bbb] border-solid rounded w-[300px] h-[400px] relative bg-cover bg-[url('/illustration.png')]"
+          className="border-2 border-[#bbb] border-solid rounded w-[300px] h-[400px] relative bg-cover bg-[url('/illustration.png')] hover:text-[#53c28b]"
         >
-          <span className="absolute bottom-2 right-2 text-3xl font-bold hover:text-[#53c28b]">
+          <span className="absolute bottom-2 right-2 text-3xl font-bold ">
             Illustrations
           </span>
         </Link>
@@ -18,9 +18,9 @@ const PortfolioPageCom = () => {
         {/*  */}
         <Link
           href="/portfolio/websites"
-          className="border-2 border-[#bbb] border-solid rounded w-[300px] h-[400px] relative bg-cover bg-[url('/websites.jpg')]"
+          className="border-2 border-[#bbb] border-solid rounded w-[300px] h-[400px] relative bg-cover bg-[url('/websites.jpg')] hover:text-[#53c28b]"
         >
-          <span className="absolute bottom-2 right-2 text-3xl font-bold hover:text-[#53c28b]">
+          <span className="absolute bottom-2 right-2 text-3xl font-bold">
             Websites
           </span>
         </Link>
@@ -28,9 +28,9 @@ const PortfolioPageCom = () => {
         {/*  */}
         <Link
           href="/portfolio/application"
-          className="border-2 border-[#bbb] border-solid rounded w-[300px] h-[400px] relative bg-cover bg-[url('/apps.jpg')]"
+          className="border-2 border-[#bbb] border-solid rounded w-[300px] h-[400px] relative bg-cover bg-[url('/apps.jpg')] hover:text-[#53c28b]"
         >
-          <span className="absolute bottom-2 right-2 text-3xl font-bold hover:text-[#53c28b]">
+          <span className="absolute bottom-2 right-2 text-3xl font-bold">
             Application
           </span>
         </Link>
