@@ -27,7 +27,7 @@ const PortfolioPageCom = () => {
 
         {/*  */}
         <Link
-          href="/portfolio/application"
+          href="/portfolio/applications"
           className="border-2 border-[#bbb] border-solid rounded w-[300px] h-[400px] relative bg-cover bg-[url('/apps.jpg')] hover:text-[#53c28b]"
         >
           <span className="absolute bottom-2 right-2 text-3xl font-bold">
