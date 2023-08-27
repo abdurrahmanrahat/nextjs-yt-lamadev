@@ -12,6 +12,7 @@
     "autoprefixer": "10.4.15",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.13",
+    "firebase": "^10.3.0",
     "mongodb": "^5.8.0",
     "mongose": "^0.0.2-security",
     "next": "13.4.13",
