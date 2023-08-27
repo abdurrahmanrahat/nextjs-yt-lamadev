@@ -1,11 +1,14 @@
 "use client";
 
+import { AuthContext } from "@/context/AuthProvider";
 import { ThemeContext } from "@/context/ThemeContext";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 const AddProductPage = () => {
   const { mood } = useContext(ThemeContext);
+  const { user } = useContext(AuthContext);
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -14,7 +17,13 @@ const AddProductPage = () => {
     console.log(data);
     const { name, photo, email, price, description } = data;
 
-    const productData = { productName: name, photo, userEmail: email, price, description };
+    const productData = {
+      productName: name,
+      photo,
+      userEmail: email,
+      price,
+      description,
+    };
 
     console.log(productData);
     // const response = await fetch("/api/product", {
@@ -31,6 +40,17 @@ const AddProductPage = () => {
     //   toast.success("Product added successfully!");
     //   reset();
     // }
+    const response = await fetch("/api/product", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(productData),
+    });
+
+    if (response.ok) {
+      toast.success("Product added to DB");
+    }
   };
 
   return (
@@ -78,7 +98,8 @@ const AddProductPage = () => {
             </label>
             <input
               type="email"
-              placeholder="Your email"
+              placeholder="your email"
+              defaultValue={user ? user.email : ""}
               {...register("email", { required: true, maxLength: 80 })}
               className={`input input-bordered w-full p-2 bg-transparent rounded border-[1px] ${
                 mood == "light" ? "border-black" : "border-white"
@@ -115,7 +136,7 @@ const AddProductPage = () => {
             cols="30"
             rows="6"
             {...register("description", { required: true })}
-            className={`bg-transparent border-[1px] rounded ${
+            className={`bg-transparent border-[1px] p-2 rounded ${
               mood == "light" ? "border-black" : "border-white"
             } `}
           ></textarea>
@@ -124,7 +145,7 @@ const AddProductPage = () => {
         {/* Submit Button */}
         <div className="text-center my-10">
           <input
-            className="btn mt-4 uppercase bg-[#53c28b] hover:bg-black border-0  text-white font-medium rounded py-2 px-3"
+            className="py-2 px-4 bg-[#53c28b] hover:bg-transparent hover:border-2 hover:border-[#53c28b] ease-out duration-300 cursor-pointer rounded font-semibold"
             type="submit"
             value="Add Product"
           />

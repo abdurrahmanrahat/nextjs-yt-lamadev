@@ -2,6 +2,7 @@
 
 import SocialLogin from "@/components/Others/SocialLogin/SocialLogin";
 import { AuthContext } from "@/context/AuthProvider";
+import { ThemeContext } from "@/context/ThemeContext";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useContext } from "react";
@@ -9,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
 const RegisterPage = () => {
+  const { mood } = useContext(ThemeContext);
   const { createUser } = useContext(AuthContext);
 
   // for redirect user after login
@@ -70,7 +72,9 @@ const RegisterPage = () => {
                 id="name"
                 placeholder="Enter Your Name"
                 {...register("name", { required: true, maxLength: 80 })}
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#0B0016]"
+                className={`input input-bordered w-full p-2 bg-transparent rounded border-[1px] ${
+                  mood == "light" ? "border-black" : "border-white"
+                } `}
                 data-temp-mail-org="0"
               />
               {errors.name?.type === "required" && (
@@ -104,7 +108,9 @@ const RegisterPage = () => {
                 id="email"
                 placeholder="Enter Your Email"
                 {...register("email", { required: true, maxLength: 80 })}
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#0B0016] bg-gray-200 text-gray-900"
+                className={`input input-bordered w-full p-2 bg-transparent rounded border-[1px] ${
+                  mood == "light" ? "border-black" : "border-white"
+                } `}
                 data-temp-mail-org="0"
               />
               {errors.email?.type === "required" && (
@@ -129,7 +135,9 @@ const RegisterPage = () => {
                   minLength: 6,
                   pattern: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-])/,
                 })}
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#0B0016] bg-gray-200 text-gray-900"
+                className={`input input-bordered w-full p-2 bg-transparent rounded border-[1px] ${
+                  mood == "light" ? "border-black" : "border-white"
+                } `}
               />
               {errors.password?.type === "required" && (
                 <p className="text-red-600 text-xl">Provide your Password</p>

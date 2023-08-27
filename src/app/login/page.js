@@ -2,12 +2,14 @@
 
 import SocialLogin from "@/components/Others/SocialLogin/SocialLogin";
 import { AuthContext } from "@/context/AuthProvider";
+import { ThemeContext } from "@/context/ThemeContext";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useContext } from "react";
 import { toast } from "react-hot-toast";
 
 const LoginPage = () => {
+  const { mood } = useContext(ThemeContext);
   const { signIn } = useContext(AuthContext);
 
   // for redirect user after login
@@ -68,7 +70,10 @@ const LoginPage = () => {
                 name="email"
                 id="email"
                 placeholder="Enter Your Email"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#0B0016]"
+                // className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#0B0016]"
+                className={`input input-bordered w-full p-2 bg-transparent rounded border-[1px] ${
+                  mood == "light" ? "border-black" : "border-white"
+                } `}
                 data-temp-mail-org="0"
                 required
               />
@@ -85,7 +90,10 @@ const LoginPage = () => {
                 name="password"
                 id="password"
                 placeholder="*******"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#0B0016]"
+                // className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#0B0016]"
+                className={`input input-bordered w-full p-2 bg-transparent rounded border-[1px] ${
+                  mood == "light" ? "border-black" : "border-white"
+                } `}
               />
             </div>
           </div>
