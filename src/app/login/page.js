@@ -3,11 +3,17 @@
 import SocialLogin from "@/components/Others/SocialLogin/SocialLogin";
 import { AuthContext } from "@/context/AuthProvider";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useContext } from "react";
 import { toast } from "react-hot-toast";
 
 const LoginPage = () => {
   const { signIn } = useContext(AuthContext);
+
+  // for redirect user after login
+  const search = useSearchParams();
+  const from = search.get("redirectUrl") || "/";
+  const { replace } = useRouter();
 
   // handle SignIN
   const handleSignIn = (event) => {
@@ -26,7 +32,7 @@ const LoginPage = () => {
         toast.success("Login successfully", {
           position: "top-center",
         });
-        // navigate(from, { replace: true });
+        replace(from);
       })
       .catch((error) => {
         console.log(error.message);
@@ -107,7 +113,7 @@ const LoginPage = () => {
         <p className="px-6 text-sm text-center text-gray-400">
           Do not have an account yet?{" "}
           <Link
-          href="/register"
+            href="/register"
             className="hover:underline hover:text-rose-500 text-gray-600"
           >
             Sign up

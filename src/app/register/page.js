@@ -3,12 +3,18 @@
 import SocialLogin from "@/components/Others/SocialLogin/SocialLogin";
 import { AuthContext } from "@/context/AuthProvider";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
 const RegisterPage = () => {
   const { createUser } = useContext(AuthContext);
+
+  // for redirect user after login
+  const search = useSearchParams();
+  const from = search.get("redirectUrl") || "/";
+  const { replace } = useRouter();
 
   const {
     register,
@@ -30,6 +36,7 @@ const RegisterPage = () => {
         const loggedUser = result.user;
         // console.log(loggedUser);
         toast.success("User created");
+        replace(from);
       })
       .catch((err) => {
         console.log(err);
