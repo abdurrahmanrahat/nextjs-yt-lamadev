@@ -3,7 +3,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
-import { Toaster } from "@/components/Others/ToasterComponent/ToasterComponent";
+import AuthProvider from "@/context/AuthProvider";
+import ToasterComponent from "@/components/Others/ToasterComponent/ToasterComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,14 +17,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
-          <div className="container mx-auto flex flex-col justify-between">
-            <Navbar></Navbar>
-            <div>{children}</div>
-            <Footer></Footer>
-          </div>
-        </ThemeProvider>
-        <Toaster />
+        <AuthProvider>
+          <ThemeProvider>
+            <div className="container mx-auto flex flex-col justify-between">
+              <Navbar></Navbar>
+              <div>{children}</div>
+              <Footer></Footer>
+            </div>
+          </ThemeProvider>
+        </AuthProvider>
+        <ToasterComponent />
       </body>
     </html>
   );

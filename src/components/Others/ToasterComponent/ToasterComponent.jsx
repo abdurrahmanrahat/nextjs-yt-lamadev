@@ -2,4 +2,8 @@
 
 import { Toaster } from "react-hot-toast";
 
-export default Toaster;
+const ToasterComponent = () => {
+  return <Toaster />;
+};
+
+export default ToasterComponent;
